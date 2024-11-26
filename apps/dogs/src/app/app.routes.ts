@@ -1,4 +1,6 @@
 import { Route } from '@angular/router';
+import { LabradorComponent } from './dogs/labrador.component';
+import { DogsComponent } from './dogs/dogs.component';
 
 export const appRoutes: Route[] = [
   {
@@ -8,7 +10,11 @@ export const appRoutes: Route[] = [
   },
   {
     path: 'dogs',
-    children: [],
+    component: DogsComponent,
+  },
+  {
+    path: 'dogs/labrador',
+    component: LabradorComponent,
   },
   {
     path: '**',

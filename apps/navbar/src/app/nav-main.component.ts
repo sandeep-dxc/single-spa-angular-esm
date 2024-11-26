@@ -8,6 +8,7 @@ import { navigateToUrl } from 'single-spa';
 const routes = [
   { path: '/cats', label: 'Cats' },
   { path: '/dogs', label: 'Dogs' },
+  { path: '/dogs/labrador', label: 'Labrador Retriever' },
 ] as const;
 
 @Component({
@@ -22,7 +23,7 @@ const routes = [
       <a
         class="border-b-2 border-transparent hover:text-teal-300"
         [ngClass]="{
-          'text-teal-300 font-bold cursor-default': appPath().startsWith(navLink.path)
+          'text-teal-300 font-bold cursor-default': appPath().endsWith(navLink.path)
         }"
         [href]="navLink.path"
         onclick="singleSpaNavigate(event)"

@@ -5,12 +5,18 @@
     <title>Single-Spa with native ESM</title>
     <base href="/" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    
+
     <!-- Makes import-map-override work together with import-map-injector -->
     <meta name="importmap-type" content="injector-importmap" />
 
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/2.0.0/modern-normalize.min.css" integrity="sha512-4xo8blKMVCiXpTaLzQSLSw3KFOVPWhm/TRtuPVc4WG6kUgjH6J03IBuG7JZPkcWMxJ5huwaBpOpnwYElP/m6wg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/2.0.0/modern-normalize.min.css"
+      integrity="sha512-4xo8blKMVCiXpTaLzQSLSw3KFOVPWhm/TRtuPVc4WG6kUgjH6J03IBuG7JZPkcWMxJ5huwaBpOpnwYElP/m6wg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <link rel="stylesheet" href="/src/styles.css" />
 
     <!-- Zone.js must be loaded first (in any case before es-module-shims if we would use that) -->
@@ -18,7 +24,7 @@
 
     <!-- importmap for 3rd-party modules like single-spa -->
     <script type="injector-importmap" src="importmaps/importmap-shared.json"></script>
-    
+
     <!-- importmap for our own micro-frontend apps -->
     <script type="injector-importmap" src="importmaps/importmap-mf.json"></script>
 
@@ -51,7 +57,7 @@
     -->
     <script>
       window.importMapInjector.initPromise.then(() => {
-        import(/* @vite-ignore */ '@myorg/host');
+        import(/* @vite-ignore */ 'myorg1/host');
       });
     </script>
 
